@@ -11,9 +11,8 @@ pipeline {
             steps {
                 
                 def rootDir = pwd()
-                def exampleModule = load "${rootDir}@script/Example.Groovy "
-                exampleModule.exampleMethod()
-                exampleModule.otherExampleMethod()
+                def first = load "first.groovy"
+                first.test1()
             }
         }
         stage('Test') { 
