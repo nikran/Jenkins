@@ -1,4 +1,10 @@
 #!/usr/bin/env groovy
+
+def printParams(def params){
+  def cdlParams = '$params';
+  println cdlParams;  
+    
+}
 pipeline {
     agent any 
     stages {
@@ -18,6 +24,7 @@ pipeline {
                         bek: "Bogdan",
                         centar: "Pekovic"
                     ]
+                    printParams(data);
                     manifestFile.write(data);
                     def first = load "${rootDir}/first.groovy"
                     first.test1()
