@@ -2,6 +2,10 @@ pipeline {
   agent any
 
   stages {
+    
+     stage('Checkout Code') {
+      def scmVars = checkout scm
+    }
     stage("Hello") {
       steps {
         echo "hello"
