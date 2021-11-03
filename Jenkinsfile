@@ -25,7 +25,6 @@ pipeline {
                         centar: "Pekovic"
                     ]
                     printParams(data);
-                    manifestFile.write(data);
                     def first = load "${rootDir}/first.groovy"
                     first.test1()
                 }
