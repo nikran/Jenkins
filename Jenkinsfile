@@ -30,14 +30,9 @@ pipeline {
                 }
             }
         }
-        stage('Load json data') { 
+        stage('Build') { 
             steps {
-                echo "Load json data"
-                script{
-                    def rootDir = pwd()
-                    def config = new groovy.json.JsonSlurper().parse(new File("$rootDir/zoc.json"))
-                    printfln config
-                }
+                echo "Build"
             }
         }
         stage('Deploy') { 
