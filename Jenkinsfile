@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 def printParams(def params){
-  def cdlParams = '$params';
+  def cdlParams = "'$params'";
   println cdlParams;  
     
 }
