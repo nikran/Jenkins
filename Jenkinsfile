@@ -17,13 +17,8 @@ pipeline {
             steps {
                 
                 script{
-                    echo "Saving json file"
-                    def rootDir = pwd()
-                    File file = new File("$rootDir/zoc.json");
-                    def data = [
-                        bek: "Bogdan",
-                        centar: "Pekovic"
-                    ]
+                    echo "Exec Groovy"
+                  
                     printParams(data);
                     def first = load "${rootDir}/first.groovy"
                     first.test1()
