@@ -23,6 +23,7 @@ pipeline {
                         centar: "Pekovic"
                     ]
                     printParams(data);
+                    def rootDir = pwd();
                     def first = load "${rootDir}/first.groovy"
                     first.test1()
                 }
