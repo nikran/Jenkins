@@ -11,7 +11,7 @@ pipeline {
             steps {
                 
                 def rootDir = pwd()
-                def first = load "first.groovy"
+                def first = load "${rootDir}/first.groovy"
                 first.test1()
             }
         }
