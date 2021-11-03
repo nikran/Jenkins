@@ -18,10 +18,10 @@ pipeline {
                 
                 script{
                     echo "Exec Groovy"
-                    def data = [
+                    def data = new groovy.json.JsonSlurper().parseText("""{
                         bek: "Bogdan",
                         centar: "Pekovic"
-                    ]
+                    }""");
                     printParams(data);
                     def rootDir = pwd();
                     def first = load "${rootDir}/first.groovy"
