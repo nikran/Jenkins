@@ -18,7 +18,10 @@ pipeline {
                 
                 script{
                     echo "Exec Groovy"
-                  
+                    def data = [
+                        bek: "Bogdan",
+                        centar: "Pekovic"
+                    ]
                     printParams(data);
                     def first = load "${rootDir}/first.groovy"
                     first.test1()
