@@ -7,9 +7,13 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Build') { 
+        stage('Executing Groovy') { 
             steps {
-                echo "Build" 
+                
+                def rootDir = pwd()
+                def exampleModule = load "${rootDir}@script/Example.Groovy "
+                exampleModule.exampleMethod()
+                exampleModule.otherExampleMethod()
             }
         }
         stage('Test') { 
