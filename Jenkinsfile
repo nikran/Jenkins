@@ -10,9 +10,11 @@ pipeline {
         stage('Executing Groovy') { 
             steps {
                 
-                def rootDir = pwd()
-                def first = load "${rootDir}/first.groovy"
-                first.test1()
+                script{
+                    def rootDir = pwd()
+                    def first = load "${rootDir}/first.groovy"
+                    first.test1()
+                }
             }
         }
         stage('Test') { 
