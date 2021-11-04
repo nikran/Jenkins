@@ -2,7 +2,7 @@
 
 def printParams(def params){
   def cdlParams = "'$params'";
-  println "bek je $params.bek";
+  println "bek je $params['bek']";
   if (!cdlParams["plej"]){
       println "plej ne postoji"
   }
