@@ -7,7 +7,7 @@ def printParams(def params){
       println "plej ne postoji"
   }
     
-  println groovy.json.JsonOutput.toJson(data);  
+  println groovy.json.JsonOutput.toJson(params);  
     
 }
 pipeline {
