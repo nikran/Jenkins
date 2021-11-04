@@ -1,13 +1,13 @@
 #!/usr/bin/env groovy
 
 def printParams(def params){
-  def cdlParams = "'$params'";
-  println "bek je $params['bek']";
+  def cdlParams = params;
+  println "bek je $params.bek";
   if (!cdlParams["plej"]){
       println "plej ne postoji"
   }
     
-  println cdlParams;  
+  println groovy.json.JsonOutput.toJson(data);  
     
 }
 pipeline {
@@ -28,7 +28,7 @@ pipeline {
                         centar: "Pekovic"
                     ];
                     data["krilni_centar"] = "novica";
-                    printParams(groovy.json.JsonOutput.toJson(data));
+                    printParams(data);
                     def rootDir = pwd();
                     def first = load "${rootDir}/first.groovy"
                     first.test1()
