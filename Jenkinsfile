@@ -22,7 +22,7 @@ pipeline {
                         bek: "Bogdan",
                         centar: "Pekovic"
                     ];
-                    data[krilni_centar] = "novica";
+                    data["krilni_centar"] = "novica";
                     printParams(groovy.json.JsonOutput.toJson(data));
                     def rootDir = pwd();
                     def first = load "${rootDir}/first.groovy"
